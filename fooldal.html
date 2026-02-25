@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladatkezelő alkalmazás</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+
+        <header>
+            <div id="cim">Feladatkezelő</div>
+
+            <div id="hamburger">
+                <label for="menu-toggle" class="menu-btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </label>
+            </div>
+            
+            <nav class="menu">
+                <ul>
+                    <li><a href="#ujFeladat">Új feladat létrehozása</a></li>
+                </ul>
+            </nav>
+
+            <button id="Temavalto">☾/☀</button>
+        </header>
+
+        <main>
+            <div class="keresoContainer">
+                <input type="text" id="keresoInput" class="keresoMezo" placeholder="Keresés a feladatok között...">
+                <button id="keresGomb" class="keresGomb">Keresés</button>
+                <button id="keresTorlesGomb" class="torlesGomb keresTorles">Keresés törlése</button>
+            </div>
+
+            <div class="FeladatContainer" id="feladatLista"></div>
+
+            <div id="ujFeladat">
+                <form id="ujFeladatForm">
+                    <input type="text" id="ujFeladatCim" name="ujFeladatCim" placeholder="Új feladat címe" required>
+                    <button type="submit" id="ujFeladatGomb">Feladat hozzáadása</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

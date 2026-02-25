@@ -1,0 +1,542 @@
+/* Alap */
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(kepek/hatter.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fejléc */
+
+header{
+    background-color: rgb(192, 189, 189);
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 50px;
+    opacity: 0.8;
+}
+
+#cim{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.menu{
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.menu li{
+    list-style: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu ul{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+.menu-btn{
+    width: 32px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-btn .line{
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Kártyák */
+
+.card{
+    background-color: white;
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    opacity: 0.8;
+}
+
+.card:hover{
+    transform: scale(1.03);
+}
+
+.card div{
+    background-color: #d1d1d2;
+    width: 120px;
+    height: 30px;
+    padding: 3px;
+    margin: 10px;
+    margin-left: 0px;
+    border: 3px solid #bcbcbc;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card div:has(input[type="checkbox"]:checked){
+    background-color: #96fd9a;
+    border: 3px solid #72f36d;
+    color: rgb(12, 161, 12);
+}
+
+.card input[type="checkbox"]{
+    accent-color: rgb(12, 161, 12);
+}
+
+/* törlés gombok */
+
+.torlesGomb {
+    background-color: #fe3131;
+    color: rgb(255, 161, 161);
+    border: none;
+    padding: 5px 10px;
+    margin: 10px;
+    margin-left: 0px;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 90px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.torlesGomb:hover {
+    background-color: #cc0000;
+}
+
+/* Kereső */
+
+.keresoContainer {
+    margin: 20px 0;
+    padding: 0px 20px 0px 20px ;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    opacity: 0.8;
+}
+
+.keresoMezo {
+    flex: 1;
+    padding: 8px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.keresGomb {
+    background-color: #cfcfcf;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.keresGomb:hover {
+    background-color: #929292;
+}
+
+/* Keresés törlése gomb */
+
+.torlesGomb.keresTorles {
+    background-color: #cfcfcf;
+    margin: 20px 0;
+    color: white;
+
+}
+
+.torlesGomb.keresTorles:hover {
+    background-color: #929292;
+}
+
+/* Új feladat */
+
+.ujFeladatContainer {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+#ujFeladatForm {
+    display: flex;
+    gap: 10px;
+}
+
+#ujFeladatCim {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#ujFeladatGomb {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.8;
+}
+
+/* Téma váltó gomb */
+
+#Temavalto {
+    margin: 10px 0;
+    background-color: #5b5b5b;
+    color: black;
+    border: 3px solid black;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    font-size: 15px;
+}
+
+.nincsTalalat {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-style: italic;
+}
+
+/* telefonos nézet */
+
+@media (max-width: 768px){
+
+    .card{
+        background-color: white;
+        width: 300px;
+        height: 150px;
+        padding: 20px;
+        margin: 20px auto 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease;
+    }
+
+    .menu{
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(83, 82, 82);
+        border-radius: 0 0 10px 10px;
+        width: 100%; 
+        margin: 0;
+    }
+
+    .menu ul{
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .menu-btn{
+        display: block;
+    }
+
+    header {
+        flex-wrap: wrap; 
+        gap: 10px; 
+        height: auto; 
+    }
+
+     #cim{
+        order: 1;
+    }
+
+    #hamburger{
+        order: 2;
+        margin-left: auto;
+    }
+
+    #Temavalto{
+        order: 3;
+        margin-left: 10px;
+    }
+
+}
+
+
+/* tablet nézet */
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+    .menu ul{
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 0;
+    }
+
+    #feladatLista{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* asztali nézet */
+
+@media (min-width: 1024px){
+
+    .menu ul{
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 0;
+    }
+
+    #feladatLista{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Sötét mód */
+
+body.sotet-mod{
+    background-image: url(kepek/sotethatter.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.sotet-mod header{
+    background-color: rgb(40, 40, 40);
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 50px;
+    opacity: 0.8;
+}
+
+.sotet-mod .card{
+    background-color: rgb(40, 40, 40);
+    color: white;
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.sotet-mod .card div{
+    background-color: rgb(71, 71, 71);
+    width: 120px;
+    height: 30px;
+    padding: 3px;
+    margin: 10px;
+    margin-left: 0px;
+    border: 3px solid #5b5b5b;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sotet-mod .card div:has(input[type="checkbox"]:checked){
+    background-color: #427b44;
+    border: 3px solid #287025;
+    color: rgb(7, 72, 7);
+}
+
+.sotet-mod .card input[type="checkbox"]{
+    accent-color: rgb(7, 72, 7);
+}
+
+.sotet-mod .torlesGomb {
+    background-color: #510101;
+    color: rgb(176, 81, 81);
+    border: none;
+    padding: 5px 10px;
+    margin: 10px;
+    margin-left: 0px;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 90px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.sotet-mod .keresoContainer {
+    margin: 20px 0;
+    padding: 0px 20px 0px 20px ;
+    border: 3px solid #4e4e4e;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+}
+
+.sotet-mod .keresoMezo {
+    background-color: #2e2e2e;
+    flex: 1;
+    padding: 8px;
+    margin: 20px 0;
+    border: 1px solid #797878;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.sotet-mod .keresGomb {
+    background-color: #2e2e2e;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.sotet-mod .keresGomb:hover {
+    background-color: #000000;
+}
+
+.sotet-mod .torlesGomb.keresTorles {
+    background-color: #2e2e2e;
+    margin: 20px 0;
+    color: white;
+
+}
+
+.sotet-mod .torlesGomb.keresTorles:hover {
+    background-color: #000000;
+}
+
+.sotet-mod .ujFeladatContainer {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sotet-mod #ujFeladatCim {
+    background-color: #2e2e2e;
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #797878;
+    border-radius: 3px;
+}
+
+.sotet-mod #ujFeladatGomb {
+    background-color: #2e2e2e;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.sotet-mod #ujFeladatGomb:hover {
+    background-color: #000000;
+}
+
+.sotet-mod #Temavalto {
+    margin: 10px 0;
+    background-color: #d4d4d4;
+    color: rgb(154, 153, 153);
+    border: 3px solid rgb(154, 153, 153);
+    border-radius: 100%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    font-size: 15px;
+}
+
+@media (max-width: 768px){
+
+    .sotet-mod .card{
+        background-color: rgb(40, 40, 40);
+        color: white;
+        width: 300px;
+        height: 150px;
+        padding: 20px;
+        margin: 20px auto 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease;
+    }
+
+    .sotet-mod .menu{
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(83, 82, 82);
+        border-radius: 0 0 10px 10px;
+        width: 100%; 
+        margin: 0;
+    }
+
+    .sotet-mod.menu ul{
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sotet-mod .menu-btn{
+        display: block;
+    }
+
+    .sotet-mod header {
+        flex-wrap: wrap; 
+        gap: 10px; 
+        height: auto; 
+    }
+
+    .sotet-mod#cim{
+        order: 1;
+    }
+
+    .sotet-mod #hamburger{
+        order: 2;
+        margin-left: auto;
+    }
+
+    .sotet-mod#Temavalto{
+        order: 3;
+        margin-left: 10px;
+    }
+}
